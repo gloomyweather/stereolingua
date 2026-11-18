@@ -48,10 +48,12 @@ const frag = /* glsl */ `
     float body = pow(1.0 - r, 2.2);
     float a = body * (0.35 + 0.95 * wisps) * vAlpha;
     if (uDay > 0.5) {
-      // watercolour wash: pigment pools at the cloud's ragged edge, as wet paint dries
-      vec3 pigment = pow(vColor, vec3(1.6)) * 0.95;
-      float edge = smoothstep(0.25, 0.6, wisps) * (1.0 - smoothstep(0.75, 1.0, r));
-      float k = clamp(a * 1.5 + edge * 0.16 * vAlpha, 0.0, 0.42);
+      // watercolour wash: a thin, even glaze. washes are multiplied and overlap a lot,
+      // so each sprite adds only a breath of pigment and dense clusters stay light
+      vec3 sat = pow(vColor, vec3(2.6));
+      vec3 pigment = sat / max(max(sat.r, sat.g), sat.b) * 0.78; // pure hue, no grey
+      float soft = pow(1.0 - r, 1.6) * (0.75 + 0.25 * wisps);
+      float k = clamp(soft * vAlpha * 0.085, 0.0, 0.085);
       gl_FragColor = vec4(mix(vec3(1.0), pigment, k), 1.0);
       return;
     }
