@@ -1,3 +1,4 @@
+import { isExtinct } from '../lib/status';
 import { useEffect, useState } from 'react';
 import { useStore } from '../store';
 import { languages } from '../data';
@@ -8,7 +9,7 @@ import type { Language } from '../data/types';
 import '../styles/overlays.css';
 
 const dates = (l: Language) => `${formatYear(l.start, true)} – ${l.end === null ? 'present' : formatYear(l.end, true)}`;
-const dead = (l: Language) => l.end !== null && l.status !== 'proto';
+const dead = isExtinct;
 
 const roots = layout.index.roots.filter((id) => langById.get(id)?.branch !== 'contact');
 const contacts = languages.filter((l) => l.branch === 'contact').sort((a, b) => a.start - b.start || a.name.localeCompare(b.name));

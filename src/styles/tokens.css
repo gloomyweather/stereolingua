@@ -13,7 +13,7 @@
   --ivory: #ece3cc; /* engraving, text */
   --ivory-2: rgba(236, 227, 204, 0.7);
   --ivory-3: rgba(236, 227, 204, 0.6);
-  --ivory-4: rgba(236, 227, 204, 0.42);
+  --ivory-4: rgba(236, 227, 204, 0.55); /* ≥ 4.5:1 on the plate and the card */
   --hair: rgba(236, 227, 204, 0.16);
   --hair-2: rgba(236, 227, 204, 0.3);
   --gilt: #d8b56d; /* what you trace */
@@ -32,14 +32,26 @@
   --font-text: 'EB Garamond', 'Iowan Old Style', Garamond, Georgia, serif;
   --font-forms: 'Gentium Book Plus', 'EB Garamond', 'Noto Serif Devanagari', 'Noto Serif Armenian', 'Noto Serif Hebrew', 'Noto Naskh Arabic', 'Noto Sans Gothic', 'Noto Sans Old Italic', 'Noto Sans Runic', 'Noto Sans Avestan', 'Noto Sans Old Persian', serif;
   /* scale */
-  --t-xs: 11px;
-  --t-s: 12.5px;
+  --t-xs: 13px;
+  --t-s: 13px;
+  /* text steps: nothing readable goes below 13px (14px on touch screens) */
+  --fs-tick: 13px; /* sky labels, axis numbers, key caps: fixed, layout-sensitive */
+  --fs-xs: 13px;
+  --fs-s: 14px;
+  --fs-m: 15px;
+  --fs-ml: 16.5px;
+  --fs-l: 18px;
+  --fs-xl: 21px;
+  --fs-xxl: 25px;
   --t-m: 15px;
   --t-l: 18px;
   --t-xl: 26px;
   --t-xxl: 44px;
   --gutter: max(16px, env(safe-area-inset-left, 0px));
   --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (pointer: coarse) {
+  :root { --fs-xs: 14px; --t-xs: 14px; --t-s: 14px; }
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
@@ -59,11 +71,11 @@
   --ivory: #1b2030;
   --ivory-2: rgba(27, 32, 48, 0.78);
   --ivory-3: rgba(27, 32, 48, 0.7);
-  --ivory-4: rgba(27, 32, 48, 0.52);
+  --ivory-4: rgba(27, 32, 48, 0.68); /* ≥ 4.5:1 on paper */
   --hair: rgba(27, 32, 48, 0.18);
   --hair-2: rgba(27, 32, 48, 0.32);
-  --gilt: #8a5a14;
-  --gilt-2: rgba(138, 90, 20, 0.5);
+  --gilt: #7a4e10;
+  --gilt-2: rgba(122, 78, 16, 0.5);
   --rubric: #a8361f;
   --card-bg: rgba(240, 233, 218, 0.95);
   --scrim: rgba(60, 52, 40, 0.35);

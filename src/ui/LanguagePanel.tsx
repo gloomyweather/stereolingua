@@ -6,6 +6,7 @@ import { BRANCH_TINT, BRANCH_LABEL } from '../lib/palette';
 import { formatYear } from '../lib/timeScale';
 import { SigilSvg, sigilReading } from './Sigil';
 import { labelText } from '../scene/Labels';
+import { isExtinct } from '../lib/status';
 
 const STATUS_LABEL = {
   proto: 'reconstructed',
@@ -62,7 +63,7 @@ export function LanguagePanel() {
   const approx = lang.startUncertainty > 0 || lang.status === 'proto';
   const children = layout.index.children.get(lang.id) ?? [];
   const parent = lang.parent ? langById.get(lang.parent) : null;
-  const dead = lang.end !== null && lang.status !== 'proto' && lang.status !== 'medieval';
+  const dead = isExtinct(lang);
   const contacts = (lang.contacts ?? []).filter((c) => langById.has(c));
 
   return (
@@ -124,6 +125,25 @@ export function LanguagePanel() {
           <span className="rubric">contested</span>
           {lang.contested}
         </p>
+      )}
+
+      {forms.length === 0 && (
+        <section>
+          <h2 className="sec-title">lexicon</h2>
+          <p className="prose muted lex-empty">
+            No forms of the atlas’s words are recorded for {lang.status === 'proto' ? 'this reconstruction' : 'this stage'}
+            {children.length > 0 ? ', but they can be followed in its daughters:' : '.'}
+          </p>
+          {children.length > 0 && (
+            <div className="kin">
+              {children.map((c) => (
+                <button key={c} className={`btn-line ${langById.get(c)?.status === 'proto' ? 'is-proto' : ''}`} onClick={() => select(c)}>
+                  {labelText(c)}
+                </button>
+              ))}
+            </div>
+          )}
+        </section>
       )}
 
       {forms.length > 0 && (

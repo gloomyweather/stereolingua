@@ -1,3 +1,4 @@
+import { isExtinct } from '../lib/status';
 import { useEffect, useMemo, useRef } from 'react';
 import * as THREE from 'three';
 import { useFrame, useThree } from '@react-three/fiber';
@@ -17,7 +18,7 @@ export function labelText(id: string): string {
   const l = langById.get(id);
   if (!l) return id;
   if (l.status === 'proto') return l.name;
-  if (l.end !== null && (l.status === 'extinct' || l.status === 'ancient')) return `†${l.name}`;
+  if (isExtinct(l)) return `†${l.name}`;
   return l.name;
 }
 

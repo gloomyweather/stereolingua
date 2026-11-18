@@ -1,3 +1,4 @@
+import { isExtinct } from '../lib/status';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useStore } from '../store';
 import { languages, words } from '../data';
@@ -34,7 +35,7 @@ export function useIndexShortcut() {
 /* ------------------------------------------------------------- helpers */
 
 const span = (l: Language) => `${formatYear(l.start, true)} – ${l.end === null ? 'present' : formatYear(l.end, true)}`;
-const isDead = (l: Language) => l.end !== null && l.status !== 'proto';
+const isDead = isExtinct;
 
 function pick<T>(arr: T[], n: number): T[] {
   const a = arr.slice();
