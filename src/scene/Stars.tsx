@@ -122,6 +122,13 @@ const frag = /* glsl */ `
       if (vSig2.z > 0.5) ink += lineAA(length(c - vec2(0.3, 0.0)), 0.065, px) * 0.9;
     }
     float glow = exp(-r * 5.0) * (proto ? 0.15 : 0.32) + vFlare * exp(-r * 2.5) * 0.9;
+    // living languages breathe: a slow pulse of light, each star on its own rhythm
+    bool living = status > 2.5 && status < 3.5;
+    if (living) {
+      float beat = 0.5 + 0.5 * sin(t * (0.9 + vSeed * 0.7) + vSeed * 6.283);
+      glow *= 0.75 + 0.75 * beat;
+      tintA += lineAA(abs(r - (0.86 + 0.06 * beat)), 0.008, px) * 0.35 * beat;
+    }
     vec3 tinted = mix(vColor, uIvory, 0.25);
     vec3 col = uIvory * ink + tinted * (tintA + glow);
     if (dead) col *= vec3(0.86, 0.84, 0.8);

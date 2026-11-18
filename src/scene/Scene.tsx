@@ -3,6 +3,7 @@ import { AdaptiveDpr, PerformanceMonitor } from '@react-three/drei';
 import { Sky } from './Sky';
 import { Starfield } from './Starfield';
 import { Graticule } from './Graticule';
+import { Nebulae } from './Nebulae';
 import { Constellation, branchIndexOf } from './Constellation';
 import { ParticleStreams } from './ParticleStreams';
 import { Stars } from './Stars';
@@ -51,6 +52,7 @@ export function Scene() {
       <Sky />
       <Starfield count={quality === 'low' ? 3000 : 6500} />
       <Graticule />
+      <Nebulae />
       <Constellation />
       <ParticleStreams />
       <Stars />

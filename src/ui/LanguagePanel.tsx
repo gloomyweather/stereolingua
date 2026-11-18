@@ -68,6 +68,9 @@ export function LanguagePanel() {
 
   return (
     <aside className="card" key={lang.id} aria-label={`${lang.name}: catalogue entry`}>
+      <div className="card-watermark" aria-hidden="true">
+        <SigilSvg lang={lang} color={tint} size={210} />
+      </div>
       <button className="card-close" onClick={() => select(null)} aria-label="Close">×</button>
       <div className="card-eyebrow">
         <span className="desig">{designation.get(lang.id)}</span>
@@ -119,7 +122,7 @@ export function LanguagePanel() {
         )}
       </dl>
 
-      <p className="prose" style={{ marginTop: 16 }}>{lang.summary}</p>
+      <p className="prose lead" style={{ marginTop: 16 }}>{lang.summary}</p>
       {lang.contested && (
         <p className="contested">
           <span className="rubric">contested</span>

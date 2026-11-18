@@ -437,3 +437,54 @@ a { color: var(--gilt); text-decoration-thickness: 1px; text-underline-offset: 3
 :root[data-plate='day'] .card-eyebrow > span:first-child { color: var(--rubric); }
 :root[data-plate='day'] .dagger { color: var(--rubric); }
 :root[data-plate='day'] .card { border-top: 3px solid color-mix(in srgb, var(--rubric) 70%, transparent); }
+
+/* ================================================================ engraved card furniture */
+/* corner fleurons sit in the card's own background, so they stay put while the entry scrolls */
+.card {
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28' fill='none' stroke='rgba%28216%2C181%2C109%2C0.6%29' stroke-width='1'%3E%3Cg transform='translate%280 0%29 scale%281 1%29'%3E%3Cpath d='M1.5 27V7.5Q1.5 1.5 7.5 1.5H27' /%3E%3Cpath d='M6 27V11Q6 6 11 6H27' stroke-width='.6'/%3E%3Cpath d='M6 18C11 17.5 15 14 17 6' stroke-width='.6'/%3E%3Cpath d='M10.5 10.5L14.5 14.5M10.5 14.5L14.5 10.5' stroke-width='.5'/%3E%3Ccircle cx='12.5' cy='12.5' r='1.1' stroke='none' fill='rgba%28216%2C181%2C109%2C0.6%29'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28' fill='none' stroke='rgba%28216%2C181%2C109%2C0.6%29' stroke-width='1'%3E%3Cg transform='translate%2828 0%29 scale%28-1 1%29'%3E%3Cpath d='M1.5 27V7.5Q1.5 1.5 7.5 1.5H27' /%3E%3Cpath d='M6 27V11Q6 6 11 6H27' stroke-width='.6'/%3E%3Cpath d='M6 18C11 17.5 15 14 17 6' stroke-width='.6'/%3E%3Cpath d='M10.5 10.5L14.5 14.5M10.5 14.5L14.5 10.5' stroke-width='.5'/%3E%3Ccircle cx='12.5' cy='12.5' r='1.1' stroke='none' fill='rgba%28216%2C181%2C109%2C0.6%29'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28' fill='none' stroke='rgba%28216%2C181%2C109%2C0.6%29' stroke-width='1'%3E%3Cg transform='translate%280 28%29 scale%281 -1%29'%3E%3Cpath d='M1.5 27V7.5Q1.5 1.5 7.5 1.5H27' /%3E%3Cpath d='M6 27V11Q6 6 11 6H27' stroke-width='.6'/%3E%3Cpath d='M6 18C11 17.5 15 14 17 6' stroke-width='.6'/%3E%3Cpath d='M10.5 10.5L14.5 14.5M10.5 14.5L14.5 10.5' stroke-width='.5'/%3E%3Ccircle cx='12.5' cy='12.5' r='1.1' stroke='none' fill='rgba%28216%2C181%2C109%2C0.6%29'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28' fill='none' stroke='rgba%28216%2C181%2C109%2C0.6%29' stroke-width='1'%3E%3Cg transform='translate%2828 28%29 scale%28-1 -1%29'%3E%3Cpath d='M1.5 27V7.5Q1.5 1.5 7.5 1.5H27' /%3E%3Cpath d='M6 27V11Q6 6 11 6H27' stroke-width='.6'/%3E%3Cpath d='M6 18C11 17.5 15 14 17 6' stroke-width='.6'/%3E%3Cpath d='M10.5 10.5L14.5 14.5M10.5 14.5L14.5 10.5' stroke-width='.5'/%3E%3Ccircle cx='12.5' cy='12.5' r='1.1' stroke='none' fill='rgba%28216%2C181%2C109%2C0.6%29'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: 7px 7px, calc(100% - 7px) 7px, 7px calc(100% - 7px), calc(100% - 7px) calc(100% - 7px);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  animation: card-in 0.7s cubic-bezier(.2, .8, .2, 1);
+}
+:root[data-plate='day'] .card {
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28' fill='none' stroke='rgba%28122%2C78%2C16%2C0.7%29' stroke-width='1'%3E%3Cg transform='translate%280 0%29 scale%281 1%29'%3E%3Cpath d='M1.5 27V7.5Q1.5 1.5 7.5 1.5H27' /%3E%3Cpath d='M6 27V11Q6 6 11 6H27' stroke-width='.6'/%3E%3Cpath d='M6 18C11 17.5 15 14 17 6' stroke-width='.6'/%3E%3Cpath d='M10.5 10.5L14.5 14.5M10.5 14.5L14.5 10.5' stroke-width='.5'/%3E%3Ccircle cx='12.5' cy='12.5' r='1.1' stroke='none' fill='rgba%28122%2C78%2C16%2C0.7%29'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28' fill='none' stroke='rgba%28122%2C78%2C16%2C0.7%29' stroke-width='1'%3E%3Cg transform='translate%2828 0%29 scale%28-1 1%29'%3E%3Cpath d='M1.5 27V7.5Q1.5 1.5 7.5 1.5H27' /%3E%3Cpath d='M6 27V11Q6 6 11 6H27' stroke-width='.6'/%3E%3Cpath d='M6 18C11 17.5 15 14 17 6' stroke-width='.6'/%3E%3Cpath d='M10.5 10.5L14.5 14.5M10.5 14.5L14.5 10.5' stroke-width='.5'/%3E%3Ccircle cx='12.5' cy='12.5' r='1.1' stroke='none' fill='rgba%28122%2C78%2C16%2C0.7%29'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28' fill='none' stroke='rgba%28122%2C78%2C16%2C0.7%29' stroke-width='1'%3E%3Cg transform='translate%280 28%29 scale%281 -1%29'%3E%3Cpath d='M1.5 27V7.5Q1.5 1.5 7.5 1.5H27' /%3E%3Cpath d='M6 27V11Q6 6 11 6H27' stroke-width='.6'/%3E%3Cpath d='M6 18C11 17.5 15 14 17 6' stroke-width='.6'/%3E%3Cpath d='M10.5 10.5L14.5 14.5M10.5 14.5L14.5 10.5' stroke-width='.5'/%3E%3Ccircle cx='12.5' cy='12.5' r='1.1' stroke='none' fill='rgba%28122%2C78%2C16%2C0.7%29'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28' fill='none' stroke='rgba%28122%2C78%2C16%2C0.7%29' stroke-width='1'%3E%3Cg transform='translate%2828 28%29 scale%28-1 -1%29'%3E%3Cpath d='M1.5 27V7.5Q1.5 1.5 7.5 1.5H27' /%3E%3Cpath d='M6 27V11Q6 6 11 6H27' stroke-width='.6'/%3E%3Cpath d='M6 18C11 17.5 15 14 17 6' stroke-width='.6'/%3E%3Cpath d='M10.5 10.5L14.5 14.5M10.5 14.5L14.5 10.5' stroke-width='.5'/%3E%3Ccircle cx='12.5' cy='12.5' r='1.1' stroke='none' fill='rgba%28122%2C78%2C16%2C0.7%29'/%3E%3C/g%3E%3C/svg%3E");
+}
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(14px); filter: blur(5px); clip-path: inset(0 0 100% 0); }
+  60% { clip-path: inset(0 0 0 0); }
+  to { opacity: 1; transform: none; filter: none; clip-path: inset(0 0 0 0); }
+}
+@media (prefers-reduced-motion: reduce) { .card { animation-duration: 0.01s; } }
+
+/* the branch's sigil, engraved large and faint behind the heading, like a watermark in the paper */
+.card-watermark {
+  position: absolute; top: 6px; right: -26px; width: 210px; height: 210px; pointer-events: none;
+  opacity: 0.13; z-index: -1; animation: watermark-in 1.6s ease both 0.2s;
+}
+.card-watermark svg { width: 100%; height: 100%; }
+:root[data-plate='day'] .card-watermark { opacity: 0.18; mix-blend-mode: multiply; }
+@keyframes watermark-in { from { opacity: 0; transform: rotate(-24deg) scale(0.9); } }
+.card { isolation: isolate; }
+
+/* a woodcut initial opens the entry */
+.prose.lead::first-letter {
+  float: left; font-family: var(--font-plate); font-size: 3.35em; line-height: 0.82;
+  margin: 0.06em 0.09em 0 -0.02em; padding: 0.04em 0.08em 0;
+  color: var(--gilt); border: 1px solid var(--gilt-2);
+  box-shadow: inset 0 0 0 2px var(--card-bg), inset 0 0 0 3px var(--hair);
+}
+:root[data-plate='day'] .prose.lead::first-letter { color: var(--rubric); border-color: color-mix(in srgb, var(--rubric) 45%, transparent); }
+
+/* the title is struck like a cartouche heading: a fine double rule beneath */
+.card-title { text-shadow: 0 1px 0 var(--card-bg), 0 0 18px color-mix(in srgb, var(--gilt) 18%, transparent); }
+.asterism { color: var(--gilt-2); }
+.asterism::before, .asterism::after { height: 3px; background: none; border-top: 1px solid var(--hair-2); border-bottom: 1px solid var(--hair); }

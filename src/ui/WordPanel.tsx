@@ -109,7 +109,7 @@ export function WordPanel() {
         <span className="form" dir="auto">{w.root}</span> <span className="muted">in {rootLang?.name ?? w.rootLang}</span>
       </div>
       <div className="asterism" aria-hidden="true">✳</div>
-      <p className="prose">{w.blurb}</p>
+      <p className="prose lead">{w.blurb}</p>
 
       <div className="wj-bar">
         <Clock />
