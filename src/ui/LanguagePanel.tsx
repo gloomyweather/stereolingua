@@ -7,6 +7,7 @@ import { formatYear } from '../lib/timeScale';
 import { SigilSvg, sigilReading } from './Sigil';
 import { labelText } from '../scene/Labels';
 import { isExtinct } from '../lib/status';
+import { samples } from '../data/samples';
 
 const STATUS_LABEL = {
   proto: 'reconstructed',
@@ -65,6 +66,7 @@ export function LanguagePanel() {
   const parent = lang.parent ? langById.get(lang.parent) : null;
   const dead = isExtinct(lang);
   const contacts = (lang.contacts ?? []).filter((c) => langById.has(c));
+  const sample = samples[lang.id];
 
   return (
     <aside className="card" key={lang.id} aria-label={`${lang.name}: catalogue entry`}>
@@ -128,6 +130,18 @@ export function LanguagePanel() {
           <span className="rubric">contested</span>
           {lang.contested}
         </p>
+      )}
+
+      {sample && (
+        <figure className="specimen">
+          <h2 className="sec-title">specimen</h2>
+          <blockquote className="sp-text" dir="auto" lang={lang.iso}>
+            {sample.text}
+          </blockquote>
+          {sample.translit && <p className="sp-tr">{sample.translit}</p>}
+          <p className="sp-en">‘{sample.translation}’</p>
+          <figcaption className="sp-src">{sample.source}</figcaption>
+        </figure>
       )}
 
       {forms.length === 0 && (

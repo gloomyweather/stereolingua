@@ -290,8 +290,13 @@ async function main() {
     wordId: w.id, lang, langName: langById.get(lang)?.name ?? lang, form,
     matchedTitle: null, matchedBy: null, header: null, gloss_ok: null,
   });
+  // optional filters for checking a batch of new data: WIKI_LANGS=a,b WIKI_WORDS=x,y (report gets a -partial suffix)
+  const onlyLangs = process.env.WIKI_LANGS?.split(',');
+  const onlyWords = process.env.WIKI_WORDS?.split(',');
   for (const w of words) {
+    if (onlyWords && !onlyWords.includes(w.id)) continue;
     for (const f of w.forms) {
+      if (onlyLangs && !onlyLangs.includes(f.lang)) continue;
       const cleaned = cleanForm(f.form);
       if (!cleaned || cleaned === '*' || !langById.has(f.lang)) {
         rows.push({ ...mk(w, f.lang, f.form), status: 'skipped', note: !langById.has(f.lang) ? 'unknown language id' : 'empty form' });
@@ -385,7 +390,7 @@ async function main() {
   const glossUnknown = rows.filter((r) => r.status === 'ok' && r.gloss_ok === 'unknown').length;
   const generated = new Date().toISOString();
   writeFileSync(
-    resolve(OUT, 'wiktionary-report.json'),
+    resolve(OUT, `wiktionary-report${process.env.WIKI_LANGS || process.env.WIKI_WORDS ? '-partial' : ''}.json`),
     JSON.stringify({ generated, total: rows.length, counts, glossUnknownAmongOk: glossUnknown, byLang, results: rows }, null, 1),
   );
 
@@ -408,7 +413,7 @@ async function main() {
     }
     md.push('');
   }
-  writeFileSync(resolve(OUT, 'wiktionary-report.md'), md.join('\n'));
+  writeFileSync(resolve(OUT, `wiktionary-report${process.env.WIKI_LANGS || process.env.WIKI_WORDS ? '-partial' : ''}.md`), md.join('\n'));
   console.log(JSON.stringify(counts), `gloss-unknown-among-ok=${glossUnknown}`);
 }
 

@@ -486,5 +486,17 @@ a { color: var(--gilt); text-decoration-thickness: 1px; text-underline-offset: 3
 
 /* the title is struck like a cartouche heading: a fine double rule beneath */
 .card-title { text-shadow: 0 1px 0 var(--card-bg), 0 0 18px color-mix(in srgb, var(--gilt) 18%, transparent); }
-.asterism { color: var(--gilt-2); }
+.asterism { color: var(--gilt); }
 .asterism::before, .asterism::after { height: 3px; background: none; border-top: 1px solid var(--hair-2); border-bottom: 1px solid var(--hair); }
+
+/* specimen: a line of the language itself, set like an epigraph */
+.specimen { margin: 0; }
+.sp-text {
+  margin: 4px 0 6px; padding: 10px 0 10px 16px; border-left: 2px solid var(--gilt-2);
+  font-family: var(--font-forms); font-size: var(--fs-l); line-height: 1.4; color: var(--ink-bright);
+  font-style: italic;
+}
+.sp-text:dir(rtl) { border-left: 0; border-right: 2px solid var(--gilt-2); padding: 10px 16px 10px 0; font-style: normal; }
+.sp-tr { margin: 0 0 4px 18px; font-family: var(--font-forms); font-style: italic; font-size: var(--fs-s); color: var(--ivory-2); }
+.sp-en { margin: 0 0 4px 18px; font-size: var(--fs-m); color: var(--ivory); }
+.sp-src { margin-left: 18px; font-size: var(--fs-xs); font-variant-caps: all-small-caps; letter-spacing: 0.06em; color: var(--ivory-3); }

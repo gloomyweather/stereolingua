@@ -24,6 +24,9 @@
 ## word ids
 inherited (give forms for every language in your group where known, including proto nodes):
   mother, father, brother, night, two, three, heart, star, new, name, water, wolf,
-  daughter, moon, tooth, foot, mead, snow
+  daughter, moon, tooth, foot, mead, snow, dog, salt, wheel, god, king, ear
 wanderers (living and relevant historical languages only, where the word exists):
-  sugar, orange, tea, coffee, chocolate, robot, algebra, zero, paradise, pyjamas, tomato
+  sugar, orange, tea, coffee, chocolate, robot, algebra, zero, paradise, pyjamas, tomato, alcohol, kiosk, sputnik, tsar
+
+## specimens
+src/data/samples.ts: one famous line per language (own script, translit, english translation, source). quote verbatim or leave out.
