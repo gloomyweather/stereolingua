@@ -1,0 +1,73 @@
+/*
+  layout: a celestial atlas plate. the 3d sky is the plate itself; the interface is its margin apparatus —
+  a title cartouche (top left), a catalogue card (right), a scale of years (left edge),
+  an explanation of signs (bottom left). engraved hairlines, ivory ink, gilt for what you are tracing.
+  a single, deliberately nocturnal look: colours are set explicitly for both host themes.
+*/
+:root {
+  color-scheme: dark;
+  /* inks */
+  --night: #070b17; /* plate ground */
+  --night-2: #0b1122; /* card ground: prussian ink */
+  --night-3: #111a31; /* raised ink */
+  --ivory: #ece3cc; /* engraving, text */
+  --ivory-2: rgba(236, 227, 204, 0.7);
+  --ivory-3: rgba(236, 227, 204, 0.6);
+  --ivory-4: rgba(236, 227, 204, 0.42);
+  --hair: rgba(236, 227, 204, 0.16);
+  --hair-2: rgba(236, 227, 204, 0.3);
+  --gilt: #d8b56d; /* what you trace */
+  --gilt-2: rgba(216, 181, 109, 0.5);
+  --rubric: #e0604a; /* manuscript red: contested, warnings */
+  --card-bg: rgba(11, 17, 34, 0.94);
+  --scrim: rgba(5, 8, 17, 0.78);
+  --shadow: rgba(0, 0, 0, 0.55);
+  --ink-bright: #fff4dc;
+  --uc-english: #93a8de; --uc-german: #c8cc72; --uc-french: #cf8fbd; --uc-spanish: #e2ad5e; --uc-italian: #72c4a0; --uc-russian: #de7564;
+  --stereo-red: #ff3b4e; /* the logo's stereo pair only */
+  --stereo-cyan: #2de2ff;
+  /* type */
+  --font-plate: 'IM Fell English', 'EB Garamond', 'Iowan Old Style', Georgia, serif;
+  --font-sc: 'IM Fell English SC', 'EB Garamond', Georgia, serif;
+  --font-text: 'EB Garamond', 'Iowan Old Style', Garamond, Georgia, serif;
+  --font-forms: 'Gentium Book Plus', 'EB Garamond', 'Noto Serif Devanagari', 'Noto Serif Armenian', 'Noto Serif Hebrew', 'Noto Naskh Arabic', 'Noto Sans Gothic', 'Noto Sans Old Italic', 'Noto Sans Runic', 'Noto Sans Avestan', 'Noto Sans Old Persian', serif;
+  /* scale */
+  --t-xs: 11px;
+  --t-s: 12.5px;
+  --t-m: 15px;
+  --t-l: 18px;
+  --t-xl: 26px;
+  --t-xxl: 44px;
+  --gutter: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+  }
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+/* the day plate: the same atlas printed in iron-gall ink on laid paper */
+:root[data-plate='day'] {
+  color-scheme: light;
+  --night: #e3dac6;
+  --night-2: #ece4d2;
+  --night-3: #f3ecdc;
+  --ivory: #1b2030;
+  --ivory-2: rgba(27, 32, 48, 0.78);
+  --ivory-3: rgba(27, 32, 48, 0.7);
+  --ivory-4: rgba(27, 32, 48, 0.52);
+  --hair: rgba(27, 32, 48, 0.18);
+  --hair-2: rgba(27, 32, 48, 0.32);
+  --gilt: #8a5a14;
+  --gilt-2: rgba(138, 90, 20, 0.5);
+  --rubric: #a8361f;
+  --card-bg: rgba(240, 233, 218, 0.95);
+  --scrim: rgba(60, 52, 40, 0.35);
+  --shadow: rgba(60, 45, 20, 0.22);
+  --ink-bright: #120f0a;
+  --uc-english: #2f4f9e; --uc-german: #6c6d12; --uc-french: #8f3c78; --uc-spanish: #9a5f0a; --uc-italian: #1f7a55; --uc-russian: #a83a2a;
+}

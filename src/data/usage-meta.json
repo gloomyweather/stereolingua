@@ -1,0 +1,243 @@
+{
+ "generated": "2026-11-18T00:29:20.890Z",
+ "corpora": {
+  "english": "en-2019",
+  "french": "fr-2019",
+  "german": "de-2019",
+  "russian": "ru-2019",
+  "spanish": "es-2019",
+  "italian": "it-2019"
+ },
+ "smoothing": 3,
+ "peaks": {
+  "mother": {
+   "english": 0.0002473,
+   "german": 0.0003573,
+   "russian": 0.0003624,
+   "french": 0.0003778,
+   "spanish": 0.0006179,
+   "italian": 0.0004159
+  },
+  "father": {
+   "english": 0.0005883,
+   "german": 0.0004746,
+   "russian": 0.0004328,
+   "french": 0.0004333,
+   "spanish": 0.001109,
+   "italian": 0.0009918
+  },
+  "brother": {
+   "english": 0.0002457,
+   "german": 0.0003275,
+   "russian": 0.0003263,
+   "french": 0.0001498,
+   "spanish": 0.0002923,
+   "italian": 0.0002471
+  },
+  "night": {
+   "english": 0.0003027,
+   "german": 0.0002729,
+   "russian": 0.003539,
+   "french": 0.0002697,
+   "spanish": 0.0003717,
+   "italian": 0.0002555
+  },
+  "two": {
+   "english": 0.001179,
+   "german": 0.0006699,
+   "russian": 0.0007654,
+   "french": 0.00177,
+   "spanish": 0.001531,
+   "italian": 0.001459
+  },
+  "three": {
+   "english": 0.0006114,
+   "german": 0.000378,
+   "russian": 0.000417,
+   "french": 0.0007378,
+   "spanish": 0.0006795,
+   "italian": 0.0005961
+  },
+  "heart": {
+   "english": 0.0006482,
+   "german": 0.0004903,
+   "russian": 0.0009826,
+   "french": 0.0005182,
+   "spanish": 0.0002339,
+   "italian": 0.0004223
+  },
+  "star": {
+   "english": 0.00004428,
+   "german": 0.00005365,
+   "russian": 0.001052,
+   "french": 0.00003237,
+   "spanish": 0.00003548,
+   "italian": 0.0000772
+  },
+  "new": {
+   "english": 0.001448,
+   "german": 0.0001382,
+   "russian": 0.0004043,
+   "french": 0.0000944,
+   "spanish": 0.0004042,
+   "italian": 0.0004591
+  },
+  "name": {
+   "english": 0.0005866,
+   "german": 0.00008218,
+   "russian": 0.0005478,
+   "french": 0.0006005,
+   "spanish": 0.0006611,
+   "italian": 0.000683
+  },
+  "water": {
+   "english": 0.0009016,
+   "german": 0.0004974,
+   "russian": 0.0005083,
+   "french": 0.0005125,
+   "spanish": 0.0005147,
+   "italian": 0.0004118
+  },
+  "wolf": {
+   "english": 0.0000214,
+   "german": 0.00004378,
+   "russian": 0.00002081,
+   "french": 0.00002567,
+   "spanish": 0.00001826,
+   "italian": 0.00003225
+  },
+  "sugar": {
+   "english": 0.00008916,
+   "german": 0.00009236,
+   "russian": 0.00006346,
+   "french": 0.00005502,
+   "spanish": 0.00005043,
+   "italian": 0.00003911
+  },
+  "orange": {
+   "english": 0.00004486,
+   "german": 0.00001273,
+   "russian": 0.000003647,
+   "french": 0.00004883,
+   "spanish": 0.00001497,
+   "italian": 0.0000056
+  },
+  "tea": {
+   "english": 0.0000429,
+   "german": 0.00003262,
+   "russian": 0.00007311,
+   "spanish": 0.00003064,
+   "french": 0.00003404,
+   "italian": 0.0001089
+  },
+  "coffee": {
+   "english": 0.0000556,
+   "german": 0.00006212,
+   "russian": 0.0002555,
+   "italian": 0.00008291,
+   "french": 0.00009184,
+   "spanish": 0.00008069
+  },
+  "chocolate": {
+   "english": 0.00001857,
+   "german": 0.000009851,
+   "russian": 0.000009324,
+   "spanish": 0.00002141,
+   "french": 0.00002433,
+   "italian": 0.00001634
+  },
+  "robot": {
+   "english": 0.000011,
+   "german": 0.00001213,
+   "russian": 0.000008613,
+   "french": 0.000006845,
+   "spanish": 0.000005281,
+   "italian": 0.000009806
+  },
+  "algebra": {
+   "english": 0.000009062,
+   "german": 0.000003517,
+   "russian": 0.0000158,
+   "french": 0.000007811,
+   "spanish": 0.000002784,
+   "italian": 0.00000581
+  },
+  "daughter": {
+   "english": 0.0001796,
+   "german": 0.0002413,
+   "russian": 0.0001752,
+   "french": 0.0003993,
+   "spanish": 0.0002842,
+   "italian": 0.0001136
+  },
+  "moon": {
+   "english": 0.0001109,
+   "german": 0.00005477,
+   "russian": 0.00006979,
+   "french": 0.0004832,
+   "spanish": 0.0002695,
+   "italian": 0.0003425
+  },
+  "tooth": {
+   "english": 0.00001706,
+   "german": 0.00001218,
+   "russian": 0.0000201,
+   "french": 0.00002288,
+   "spanish": 0.00001113,
+   "italian": 0.0000163
+  },
+  "foot": {
+   "english": 0.000187,
+   "german": 0.0002554,
+   "russian": 0.00001496,
+   "french": 0.0002664,
+   "spanish": 0.000223,
+   "italian": 0.0001028
+  },
+  "mead": {
+   "english": 0.000008155,
+   "german": 0.00003679,
+   "russian": 0.00003544
+  },
+  "snow": {
+   "english": 0.00004221,
+   "german": 0.00003145,
+   "russian": 0.00005202,
+   "french": 0.00003961,
+   "spanish": 0.00003739,
+   "italian": 0.00004259
+  },
+  "zero": {
+   "english": 0.00004881,
+   "german": 0.00002627,
+   "russian": 0.00002421,
+   "italian": 0.00002212,
+   "french": 0.00001413,
+   "spanish": 0.00002076
+  },
+  "paradise": {
+   "english": 0.00003558,
+   "german": 0.00001178,
+   "russian": 0.00004448,
+   "french": 0.00007106,
+   "spanish": 0.00001751,
+   "italian": 0.00007289
+  },
+  "pyjamas": {
+   "english": 8.5e-7,
+   "german": 0.000001322,
+   "russian": 4.355e-7,
+   "french": 0.000004961,
+   "spanish": 0.000006426,
+   "italian": 0.000007109
+  },
+  "tomato": {
+   "english": 0.000008643,
+   "german": 0.00000173,
+   "russian": 0.000002246,
+   "spanish": 0.00001021,
+   "french": 0.000005834,
+   "italian": 0.000009002
+  }
+ }
+}
