@@ -132,9 +132,9 @@ const frag = /* glsl */ `
     if (uDay > 0.5) {
       // ink on paper: the symbol in iron-gall black, grammar in the branch's tint, a gilt ring for the chosen star
       vec3 inkC = vec3(0.10, 0.11, 0.15);
-      vec3 tintC = vColor * 0.42;
+      vec3 tintC = pow(vColor, vec3(2.6)) * 0.72;
       vec3 outD = mix(vec3(1.0), inkC, clamp(ink + vFlare * exp(-r * 3.0) * 0.5, 0.0, 1.0));
-      outD *= mix(vec3(1.0), tintC, clamp(tintA * 1.2 + glow * 0.35, 0.0, 1.0));
+      outD *= mix(vec3(1.0), tintC, clamp(tintA * 1.5 + glow * 0.6, 0.0, 1.0));
       if (vHi > 1.5) outD *= mix(vec3(1.0), vec3(0.55, 0.38, 0.1), lineAA(abs(r - 0.92), 0.022, px));
       gl_FragColor = vec4(mix(vec3(1.0), outD, edgeA), 1.0);
       return;

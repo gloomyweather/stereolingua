@@ -53,6 +53,7 @@ a { color: var(--gilt); text-decoration-thickness: 1px; text-underline-offset: 3
   transition: opacity 0.4s;
 }
 .ring-label.is-now { color: var(--gilt-2); }
+:root[data-plate='day'] .branch-name { color: color-mix(in srgb, var(--tint, var(--ivory)) 70%, #3a1e08); filter: saturate(1.6); text-shadow: 0 0 10px var(--night); }
 .branch-name {
   position: absolute; left: 0; top: 0; white-space: nowrap;
   font-family: var(--font-sc); font-size: clamp(13px, 1.2vw, 17px); letter-spacing: 0.36em;
@@ -429,3 +430,10 @@ a { color: var(--gilt); text-decoration-thickness: 1px; text-underline-offset: 3
   .wf-row, .ol-row { align-items: center; }
   .ol-toggle { width: 40px; height: 40px; line-height: 38px; }
 }
+
+/* day plate: hand-coloured, like an atlas washed in watercolour after printing */
+:root[data-plate='day'] .sec-title,
+:root[data-plate='day'] .scale-head,
+:root[data-plate='day'] .card-eyebrow > span:first-child { color: var(--rubric); }
+:root[data-plate='day'] .dagger { color: var(--rubric); }
+:root[data-plate='day'] .card { border-top: 3px solid color-mix(in srgb, var(--rubric) 70%, transparent); }

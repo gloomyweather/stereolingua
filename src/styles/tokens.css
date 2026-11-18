@@ -65,9 +65,9 @@
 /* the day plate: the same atlas printed in iron-gall ink on laid paper */
 :root[data-plate='day'] {
   color-scheme: light;
-  --night: #e3dac6;
-  --night-2: #ece4d2;
-  --night-3: #f3ecdc;
+  --night: #efe2c4;
+  --night-2: #f4e9cf;
+  --night-3: #f8efda;
   --ivory: #1b2030;
   --ivory-2: rgba(27, 32, 48, 0.78);
   --ivory-3: rgba(27, 32, 48, 0.7);
@@ -77,7 +77,7 @@
   --gilt: #7a4e10;
   --gilt-2: rgba(122, 78, 16, 0.5);
   --rubric: #a8361f;
-  --card-bg: rgba(240, 233, 218, 0.95);
+  --card-bg: rgba(247, 238, 216, 0.96);
   --scrim: rgba(60, 52, 40, 0.35);
   --shadow: rgba(60, 45, 20, 0.22);
   --ink-bright: #120f0a;

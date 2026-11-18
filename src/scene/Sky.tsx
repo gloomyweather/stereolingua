@@ -46,7 +46,7 @@ export function Sky() {
             col += vec3(0.0030, 0.0038, 0.0085) * smoothstep(0.45, 0.85, n);
             col *= 1.0 - lanes * 0.18;
             // day plate: laid paper with faint foxing (linear space)
-            vec3 paper = mix(vec3(0.70, 0.655, 0.56), vec3(0.80, 0.765, 0.67), smoothstep(-0.4, 0.6, h));
+            vec3 paper = mix(vec3(0.80, 0.66, 0.44), vec3(0.90, 0.81, 0.60), smoothstep(-0.4, 0.6, h));
             paper *= 1.0 - smoothstep(0.55, 0.9, fbm(d * 4.0 + 3.1)) * 0.07;
             paper *= 1.0 - smoothstep(0.5, 0.85, fbm(d * 16.0 + 1.7)) * 0.03;
             col = mix(col, paper, uDay);

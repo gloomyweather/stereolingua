@@ -67,7 +67,7 @@ const frag = /* glsl */ `
     float disc = smoothstep(1.0, 0.75, d) * 0.55 + smoothstep(1.0, 0.0, d) * 0.45;
     float a = mix(sharp, disc, vSoft) * vAlpha;
     if (a < 0.002) discard;
-    gl_FragColor = uDay > 0.5 ? vec4(mix(vec3(1.0), vColor * 0.34, clamp(a * 1.5, 0.0, 1.0)), 1.0) : vec4(vColor * a, 1.0);
+    gl_FragColor = uDay > 0.5 ? vec4(mix(vec3(1.0), pow(vColor, vec3(2.6)) * 0.75, clamp(a * 2.3, 0.0, 1.0)), 1.0) : vec4(vColor * a, 1.0);
   }
 `;
 

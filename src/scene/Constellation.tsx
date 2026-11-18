@@ -120,7 +120,7 @@ export function Constellation() {
             // the journey front: what the word has reached glows, what it has not stays faint
             float reached = smoothstep(uJourneyY + 0.2, uJourneyY - 0.2, vTreeY);
             a *= mix(1.0, vFocus > 0.5 ? mix(0.35, 1.25, reached) : 1.0, uJourney);
-            gl_FragColor = uDay > 0.5 ? vec4(mix(vec3(1.0), vColor * 0.3, clamp(a * 1.7, 0.0, 1.0)), 1.0) : vec4(vColor * a, 1.0);
+            gl_FragColor = uDay > 0.5 ? vec4(mix(vec3(1.0), pow(vColor, vec3(2.6)) * 0.72, clamp(a * 2.8, 0.0, 1.0)), 1.0) : vec4(vColor * a, 1.0);
           }`,
       })),
     [],

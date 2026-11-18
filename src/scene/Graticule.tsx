@@ -5,7 +5,7 @@ import { layout, langById, GLOBE_CENTER, GLOBE_R, latLonDir, nodePos } from './m
 import { U, themedMaterial } from './uniforms';
 import { yearToY, HEIGHT, formatYear } from '../lib/timeScale';
 import { useStore } from '../store';
-import { BRANCH_LABEL } from '../lib/palette';
+import { BRANCH_LABEL, BRANCH_TINT } from '../lib/palette';
 import landDots from '../data/landDots.json';
 import type { Branch } from '../data/types';
 
@@ -49,7 +49,7 @@ const lineMat = (opacity: number, dashed: boolean, fadeWithMorph: 1 | -1) =>
         float m = ${fadeWithMorph === 1 ? '1.0 - uMorph' : 'uMorph'};
         float grow = ${fadeWithMorph === 1 ? 'smoothstep(uGrowY + 1.0, uGrowY - 1.0, vY)' : '1.0'};
         float cov = uOpacity * m * grow * vNear;
-        gl_FragColor = uDay > 0.5 ? vec4(mix(vec3(1.0), vec3(0.16, 0.17, 0.22), clamp(cov * 2.6, 0.0, 1.0)), 1.0) : vec4(uColor * cov, 1.0);
+        gl_FragColor = uDay > 0.5 ? vec4(mix(vec3(1.0), vec3(0.10, 0.22, 0.42), clamp(cov * 2.6, 0.0, 1.0)), 1.0) : vec4(uColor * cov, 1.0);
       }`,
   });
 
@@ -147,7 +147,7 @@ export function Graticule() {
           float d = length(gl_PointCoord - 0.5) * 2.0;
           float a = smoothstep(1.0, 0.4, d) * uMorph * mix(0.08, 0.55, vFace);
           if (a < 0.004) discard;
-          gl_FragColor = uDay > 0.5 ? vec4(mix(vec3(1.0), vec3(0.2, 0.2, 0.25), clamp(a * 1.6, 0.0, 1.0)), 1.0) : vec4(vec3(0.93, 0.89, 0.8) * a, 1.0);
+          gl_FragColor = uDay > 0.5 ? vec4(mix(vec3(1.0), vec3(0.12, 0.25, 0.45), clamp(a * 1.6, 0.0, 1.0)), 1.0) : vec4(vec3(0.93, 0.89, 0.8) * a, 1.0);
         }`,
     });
     return { g, m: themedMaterial(m) };
@@ -188,6 +188,7 @@ export function Graticule() {
     for (const b of branches) {
       const d = document.createElement('div');
       d.className = 'branch-name';
+      d.style.setProperty('--tint', BRANCH_TINT[b.branch]);
       d.textContent = BRANCH_LABEL[b.branch];
       d.style.opacity = '0';
       root.appendChild(d);
