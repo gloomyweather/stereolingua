@@ -26,14 +26,26 @@ export function Starfield({ count = 6500 }: { count?: number }) {
     const c = new Float32Array(count * 3);
     const s = new Float32Array(count);
     const ph = new Float32Array(count);
+    const N = new THREE.Vector3(0.42, 0.78, -0.46).normalize();
+    const G = new THREE.Vector3().crossVectors(N, new THREE.Vector3(0, 0, 1)).normalize();
+    const T = new THREE.Vector3().crossVectors(N, G).normalize();
+    const dir = new THREE.Vector3();
     let seed = 7;
     const r = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
     for (let i = 0; i < count; i++) {
-      const u = r() * 2 - 1;
-      const th = r() * Math.PI * 2;
-      const q = Math.sqrt(1 - u * u);
       const rad = 420 + r() * 260;
-      p.set([q * Math.cos(th) * rad, u * rad * 0.9 + 30, q * Math.sin(th) * rad], i * 3);
+      if (i % 5 < 2) {
+        // two in five stars crowd into the milky way band (same plane as the sky shader)
+        const a = r() * Math.PI * 2;
+        const off = (r() + r() + r() - 1.5) * 0.22;
+        dir.copy(G).multiplyScalar(Math.cos(a)).addScaledVector(T, Math.sin(a)).addScaledVector(N, off).normalize();
+        p.set([dir.x * rad, dir.y * rad * 0.9 + 30, dir.z * rad], i * 3);
+      } else {
+        const u = r() * 2 - 1;
+        const th = r() * Math.PI * 2;
+        const q = Math.sqrt(1 - u * u);
+        p.set([q * Math.cos(th) * rad, u * rad * 0.9 + 30, q * Math.sin(th) * rad], i * 3);
+      }
       const temp = 2800 + Math.pow(r(), 1.6) * 11000;
       c.set(kelvin(temp), i * 3);
       s[i] = 0.55 + Math.pow(r(), 9) * 5.5;

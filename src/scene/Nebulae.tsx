@@ -55,7 +55,7 @@ const frag = /* glsl */ `
       gl_FragColor = vec4(mix(vec3(1.0), pigment, k), 1.0);
       return;
     }
-    gl_FragColor = vec4(vColor * a * 0.13, 1.0);
+    gl_FragColor = vec4(vColor * a * 0.1, 1.0);
   }
 `;
 
